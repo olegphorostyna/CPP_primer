@@ -141,3 +141,30 @@ void StrVec::reallocate() {
 	first_free = dest;
 	cap = elements + newcapacity;
 }
+
+bool operator==(const StrVec& l, const StrVec& r) {
+	return l.size() == r.size() && std::equal(l.begin(), l.end(), r.begin());
+}
+bool operator!=(const StrVec& l, const StrVec& r) {
+	return !(l == r);
+}
+
+bool operator>(const StrVec& l, const StrVec& r) {
+	auto li = l.begin(), ri = r.begin();
+	for (; li != l.end() && ri != r.end(); li++, ri++) {
+		if (*li > * ri)
+			return true;
+		else if (*li < * ri)
+			return false;		
+	}
+	return li != l.end() && ri == r.end();
+}
+bool operator<(const StrVec& l, const StrVec& r) {
+	return r > l;
+}
+bool operator>=(const StrVec& l, const StrVec& r) {
+	return !(l < r);
+}
+bool operator<=(const StrVec& l, const StrVec& r) {
+	return !(l > r);
+}

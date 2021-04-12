@@ -39,11 +39,12 @@ void runQueries(std::ifstream &infile) {
     }
 }
 
+
 int main()
 {
 
-    Book b;
-    std::cout << b;
+   // Book b;
+   // std::cout << b;
    /* std::vector<String> str_vec;
     str_vec.push_back("asdasdas");
     str_vec.push_back(String ("asdasd"));

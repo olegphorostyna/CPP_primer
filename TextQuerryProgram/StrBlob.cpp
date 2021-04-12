@@ -39,3 +39,24 @@ void StrBlob::pop_back() {
 	check(0, "pop_back on empty StrBlob");
 	return data->pop_back();
 }
+
+ bool operator==(const StrBlob& l, const StrBlob& r) {
+	return *l.data == *r.data;	
+}
+ bool operator!=(const StrBlob& l, const StrBlob& r) {
+	return !(l==r);
+}
+
+
+ bool operator>(const StrBlob& l, const StrBlob& r) {
+	 return *l.data > * r.data;
+ }
+ bool operator<(const StrBlob& l, const StrBlob& r) {
+	 return r > l;
+ }
+ bool operator>=(const StrBlob& l, const StrBlob& r) {
+	 return !(l < r);
+ }
+ bool operator<=(const StrBlob& l, const StrBlob& r) {
+	 return !(l > r);
+ }

@@ -6,6 +6,12 @@
 class StrBlobPtr;
 class StrBlob {
 	friend class StrBlobPtr;
+	friend bool operator==(const StrBlob& l, const StrBlob& r);
+	friend bool operator!=(const StrBlob& l, const StrBlob& r);
+	friend bool operator>(const StrBlob& l, const StrBlob& r);
+	friend bool operator<(const StrBlob& l, const StrBlob& r);
+	friend bool operator>=(const StrBlob& l, const StrBlob& r);
+	friend bool operator<=(const StrBlob& l, const StrBlob& r);
 public:
 	typedef std::vector<std::string>::size_type size_type;
 	StrBlob();

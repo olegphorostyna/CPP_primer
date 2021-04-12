@@ -4,6 +4,12 @@
 #include <initializer_list>
 
 class StrVec {
+	friend bool operator==(const StrVec& l, const StrVec& r);
+	friend bool operator!=(const StrVec& l, const StrVec& r);
+	friend bool operator>(const StrVec& l, const StrVec& r);
+	friend bool operator<(const StrVec& l, const StrVec& r);
+	friend bool operator>=(const StrVec& l, const StrVec& r);
+	friend bool operator<=(const StrVec& l, const StrVec& r);
 public:
 	StrVec(): elements(nullptr), first_free(nullptr), cap(nullptr) {
 	

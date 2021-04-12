@@ -5,6 +5,8 @@
 
 class Book {
 
+	friend bool operator==(const Book& l, const Book& r);
+	friend bool operator!=(const Book& l, const Book& r);
 	friend std::ostream& operator<<(std::ostream&, const Book&);
 	friend std::istream& operator>>(std::istream&, Book&);
 
@@ -52,4 +54,14 @@ std::istream& operator>>(std::istream& s, Book& d) {
 		d = Book();
 	}
 	return s;
+}
+
+
+bool operator==(const Book& l, const Book& r) {
+	return l.authors == r.authors && l.isbn == r.isbn &&
+		l.name == r.name && l.published_year == r.published_year &&
+		l.publisher == r.publisher && l.version == r.version;
+}
+bool operator!=(const Book& l, const Book& r) {
+	return !(l == r);
 }

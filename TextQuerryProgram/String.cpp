@@ -104,3 +104,31 @@ std::ostream& operator<< (std::ostream& s, const String& d) {
 }
 
 
+bool operator==(const String& l, const String& r) {
+	return l.size() == r.size() && std::equal(l.begin(), l.end(), r.begin());
+}
+bool operator!=(const String& l, const String& r) {
+	return !(l == r);
+}
+
+bool operator>(const String& l, const String& r) {
+	auto li = l.begin(), ri = r.begin();
+	for (; li != l.end() && ri != r.end(); li++, ri++)
+		if (*li > * ri)
+			return true;
+		else if (*li < *ri)
+			return false;
+	return ri == r.end() && li != l.end();
+}
+bool operator<(const String& l, const String& r) {
+	return r > l;
+}
+bool operator>=(const String& l, const String& r) {
+	return !(l < r);
+}
+bool operator<=(const String& l, const String& r) {
+	return !(l > r);
+}
+
+
+

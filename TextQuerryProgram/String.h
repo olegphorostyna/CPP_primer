@@ -5,6 +5,12 @@
 
 class String {
 	friend std::ostream & operator<< (std::ostream& s, const String& d);
+	friend bool operator==(const String& l, const String& r);
+	friend bool operator!=(const String& l, const String& r);
+	friend bool operator>(const String& l, const String& r);
+	friend bool operator<(const String& l, const String& r);
+	friend bool operator>=(const String& l, const String& r);
+	friend bool operator<=(const String& l, const String& r);
 public:
 	String() :first_elem(nullptr), first_free(nullptr), cap(nullptr){}
 	String(const char*);

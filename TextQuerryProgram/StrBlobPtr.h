@@ -5,6 +5,12 @@
 #include "StrBlob.h"
 #include "QueryResult.h"
 class StrBlobPtr {
+	friend bool operator==(const StrBlobPtr& l, const StrBlobPtr& r);
+	friend bool operator!=(const StrBlobPtr& l, const StrBlobPtr& r);
+	friend bool operator>(const StrBlobPtr& l, const StrBlobPtr& r);
+	friend bool operator<(const StrBlobPtr& l, const StrBlobPtr& r);
+	friend bool operator>=(const StrBlobPtr& l, const StrBlobPtr& r);
+	friend bool operator<=(const StrBlobPtr& l, const StrBlobPtr& r);
 public:
 	StrBlobPtr() : curr(0) {}
 	StrBlobPtr(StrBlob& a, QueryResult::line_no index = 0) :

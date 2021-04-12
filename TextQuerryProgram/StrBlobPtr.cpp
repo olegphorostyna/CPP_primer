@@ -24,3 +24,23 @@ StrBlobPtr& StrBlobPtr::incr() {
 	++curr;
 	return *this;
 }
+
+bool operator==(const StrBlobPtr& l, const StrBlobPtr& r) {
+	return l.wptr.lock() == r.wptr.lock() && l.curr == r.curr;
+}
+bool operator!=(const StrBlobPtr& l, const StrBlobPtr& r) {
+	return !(l == r);
+}
+
+bool operator>(const StrBlobPtr& l, const StrBlobPtr& r) {
+	return l.wptr.lock() == r.wptr.lock() && l.curr > r.curr;
+}
+bool operator<(const StrBlobPtr& l, const StrBlobPtr& r) {
+	return r > l;
+}
+bool operator>=(const StrBlobPtr& l, const StrBlobPtr& r) {
+	return !(l < r);
+}
+bool operator<=(const StrBlobPtr& l, const StrBlobPtr& r) {
+	return !(l > r);
+}
