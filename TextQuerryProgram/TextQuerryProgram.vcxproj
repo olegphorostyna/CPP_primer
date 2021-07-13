@@ -154,6 +154,7 @@
     <ClInclude Include="Book.h" />
     <ClInclude Include="Folder.h" />
     <ClInclude Include="Foo.h" />
+    <ClInclude Include="Quote.h" />
     <ClInclude Include="Sales_data.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="StrVec.h" />
