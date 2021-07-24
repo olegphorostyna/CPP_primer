@@ -4,7 +4,7 @@
 class Quote {
 public:
   Quote() = default;
-  Quote(const std::string &book, double sale_price);
+  Quote(const std::string& book, double sale_price) :book_no(book), price(sale_price) {}
   std::string isbn() const { return book_no; }
   virtual double net_price(std::size_t n) const {
     return n * price;

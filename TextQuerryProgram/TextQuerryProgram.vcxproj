@@ -152,6 +152,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Book.h" />
+    <ClInclude Include="Bulk_limit.h" />
+    <ClInclude Include="Bulk_quote.h" />
     <ClInclude Include="Folder.h" />
     <ClInclude Include="Foo.h" />
     <ClInclude Include="Quote.h" />

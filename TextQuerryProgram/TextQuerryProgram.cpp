@@ -9,6 +9,9 @@
 #include "String.h"
 #include "Foo.h"
 #include "Book.h"
+#include "Quote.h"
+#include "Bulk_quote.h"
+#include "Bulk_limit.h"
 
 
 
@@ -42,7 +45,10 @@ void runQueries(std::ifstream &infile) {
 
 int main()
 {
-
+    Quote first_book("Harry Potter", 20);
+    Bulk_quote socond_book("James Bond", 20, 5, 0.1);
+    Bulk_limit third_book("Conception", 20, 5, 0.1);
+    print_total(std::cout, third_book, 7);
    // Book b;
    // std::cout << b;
    /* std::vector<String> str_vec;

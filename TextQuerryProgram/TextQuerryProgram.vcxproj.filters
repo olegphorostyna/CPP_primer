@@ -83,5 +83,11 @@
     <ClInclude Include="Quote.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Bulk_quote.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bulk_limit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
